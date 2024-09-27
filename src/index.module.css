@@ -80,7 +80,7 @@
 
   #sidebar.active {
     left: 0;
-    width: 100%;
+    width: 20%;
     transition: all 0.7s ease;
   }
 
