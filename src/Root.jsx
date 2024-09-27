@@ -16,11 +16,11 @@ export default function Root() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/" className={({ isActive }) => (isActive ? style.linkActive : '')}  onClick={() => setSidebarActive(!isSidebarActive)}>Home</NavLink>
+              <NavLink to="/Calories-tracer" className={({ isActive }) => (isActive ? style.linkActive : '')}  onClick={() => setSidebarActive(!isSidebarActive)}>Home</NavLink>
               {/* <Link to="/" onClick={() => setSidebarActive(!isSidebarActive)}>Home</Link> */}
             </li>
             <li>
-            <NavLink to="tracker" className={({ isActive }) => (isActive ? style.linkActive : '')}  onClick={() => setSidebarActive(!isSidebarActive)}>Tracker</NavLink>
+            <NavLink to="tracer" className={({ isActive }) => (isActive ? style.linkActive : '')}  onClick={() => setSidebarActive(!isSidebarActive)}>Tracker</NavLink>
             </li>
           </ul>
         </nav>

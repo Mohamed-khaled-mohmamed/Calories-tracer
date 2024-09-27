@@ -11,7 +11,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/Calories-tracer',
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
@@ -20,11 +20,11 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'tracker', // إزالة '/' لأنه يتم تضمينه تلقائيًا
+        path: 'tracer', // إزالة '/' لأنه يتم تضمينه تلقائيًا
         element: <App />,
       },
       {
-        path: 'tracker/:recordID', // إزالة '/' لأنه يتم تضمينه تلقائيًا
+        path: 'tracer/:recordID', // إزالة '/' لأنه يتم تضمينه تلقائيًا
         element: (
           <CustomProvider>
             <RecordDetail />

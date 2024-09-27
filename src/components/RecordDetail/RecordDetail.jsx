@@ -29,7 +29,7 @@ function RecordDetail() {
   return (
     <>
       {newFormData.length > 0 ? (
-        <>
+        <div className={styles.detailContainer}>
           <button className={styles.backButton} onClick={handleBack}>
             Back
           </button>
@@ -54,7 +54,7 @@ function RecordDetail() {
               </div>
             </div>
           ))}
-        </>
+        </div>
       ) : (
         <ErrorPage />
       )}
