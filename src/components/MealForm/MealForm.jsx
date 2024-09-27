@@ -154,7 +154,6 @@ const MealForm = () => {
               value={mealRecord.calories.value}
               onChange={handleInputChange}
               required
-              min={10}
             />
           </div>
 

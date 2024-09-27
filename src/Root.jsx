@@ -16,7 +16,7 @@ export default function Root() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/Calories-tracer" className={({ isActive }) => (isActive ? style.linkActive : '')}  onClick={() => setSidebarActive(!isSidebarActive)}>Home</NavLink>
+              <NavLink to="/Calories-tracer"end className={({ isActive }) => (isActive ? style.linkActive : '')}  onClick={() => setSidebarActive(!isSidebarActive)}>Home</NavLink>
               {/* <Link to="/" onClick={() => setSidebarActive(!isSidebarActive)}>Home</Link> */}
             </li>
             <li>
