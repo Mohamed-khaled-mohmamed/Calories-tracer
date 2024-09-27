@@ -42,3 +42,9 @@
     transform: scale(1);
   }
 }
+
+@media (max-width:1080px) {
+  .homeContainer{
+    margin-left: 0;
+  }
+}
