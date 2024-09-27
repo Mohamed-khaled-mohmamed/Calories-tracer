@@ -1,0 +1,103 @@
+.recordContainer {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 60%;
+  max-width: 800px; 
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: #ffffff; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  animation: fadeIn 0.3s ease;
+}
+
+.recordContainer:hover {
+  transform: translateY(-5px); /* ارتفاع طفيف عند التحويم */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* تكثيف الظل عند التحويم */
+}
+
+.recordItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fa; 
+  border-radius: 8px;
+  border-left: 4px solid #3498db; 
+  transition: background-color 0.3s ease, border-left-color 0.3s ease;
+}
+
+.recordItem:hover {
+  background-color: #e9eef4;
+  border-left-color: #2980b9; 
+}
+
+.tiltel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555; 
+}
+
+.value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.date {
+  border-left-color: #4a90e2; 
+}
+
+.meal {
+  border-left-color: #27ae60; 
+}
+
+.content {
+  border-left-color: #8e44ad; 
+}
+
+.calories {
+  border-left-color: #e74c3c;
+}
+
+.backButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 1rem 0; /* إضافة مساحة حول الزر */
+}
+
+.backButton:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .recordContainer {
+    width: 90%;
+  }
+  .recordItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

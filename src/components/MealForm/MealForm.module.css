@@ -1,39 +1,49 @@
+/* طبقة التراكب (Overlay) */
 .overLay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7); /* زيادة التعتيم لإبراز الحاوية */
   z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* الحاوية الرئيسية */
 .container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  max-width: 400px;
-  margin: 2rem auto;
+  position: relative;
+  width: 100%;
+  /* top: 0%;
+  left: 10%; */
+  margin: auto;
+  max-width: 400px; /* تعديل العرض الأقصى */
   padding: 2rem;
   background-color: #ffffff;
-  border-radius: 8px;
-  border: 1px solid #f6eeee;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px; /* زيادة نصف القطر للحصول على زوايا أكثر نعومة */
+  border: 1px solid #e3e3e3;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* زيادة الظل لإضفاء العمق */
+  animation: fadeIn 0.3s ease; /* إضافة تأثير دخول */
+  z-index: 1000;
 }
-
-.hidden{
+.hidden {
   width: 0;
   height: 0;
   visibility: hidden;
 }
+
+/* عنوان المودال */
 .title {
   text-align: center;
-  color: #333;
+  color: #222;
+  font-size: 1.6rem; /* تكبير حجم الخط */
+  font-weight: bold;
   margin-bottom: 1.5rem;
 }
 
+/* تنسيق النموذج */
 .form {
   display: flex;
   flex-direction: column;
@@ -47,26 +57,35 @@
 
 .label {
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  color: #555;
+  margin-bottom: 0.3rem;
+  color: #666; /* تغيير اللون إلى درجة رمادية داكنة */
 }
 
 .input,
-.select {
+.select,
+.inputError {
   padding: 0.75rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px; /* زيادة نصف القطر */
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #fafafa; /* خلفية خفيفة لإضفاء التباين */
+}
+
+.inputError {
+  outline: none;
+  border-bottom: 2px solid red;
 }
 
 .input:focus,
 .select:focus {
   outline: none;
   border-color: #4a90e2;
+  box-shadow: 0 0 4px rgba(74, 144, 226, 0.3); /* إضافة ظل خفيف عند التركيز */
 }
 
-.button {
+.button,
+.disabledBtn {
   background-color: #4a90e2;
   color: white;
   padding: 0.75rem;
@@ -74,15 +93,41 @@
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* إضافة تأثيرات الحركة */
 }
 
 .button:hover {
   background-color: #357abd;
+  transform: translateY(-2px); /* ارتفاع طفيف عند التحويم */
+}
+
+.disabledBtn {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+  border: 1px solid #999;
+}
+
+.disabledBtn:hover {
+  transform: none; /* إلغاء تأثير التحويم */
 }
 
 @media (max-width: 480px) {
   .container {
     padding: 1rem;
+    margin: 1rem; /* التأكد من أن الحاوية لا تلتصق بحواف الشاشة */
+  }
+}
+
+/* تأثير الدخول */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

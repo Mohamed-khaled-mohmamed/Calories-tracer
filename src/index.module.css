@@ -1,0 +1,113 @@
+/* إعداد الحاوية الرئيسية */
+.rootContainer {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap; /* السماح للمرونة في العرض */
+}
+
+#sidebar {
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.7s ease;
+  position: fixed; /* تثبيت السايد بار */
+  /* z-index: 1000; */
+}
+
+#sidebar:hover {
+  width: 260px; /* توسيع السايد بار عند التمرير فوقه */
+}
+
+#sidebar nav {
+  margin-top: 30px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar ul li {
+  margin: 20px 0;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 25px;
+}
+
+#detail {
+  flex: 1;
+  /* display: flex;
+  justify-content: center; */
+  padding: 20px;
+  margin-left: 260px; 
+  transition: all 0.3s ease;
+}
+
+#sidebar ul li .linkActive{
+  font-weight: 800;
+ color: #00e9ff ;
+}
+
+/* الاستجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -2500px; 
+    transition: all 0.7s ease;
+  }
+
+  #sidebar.active {
+    left: 0; 
+    width: 100%;
+    transition: all 0.7s ease;
+  }
+
+  #detail {
+    margin-left: 0; /* إزالة المساحة الجانبية في الشاشات الصغيرة */
+    padding: 10px;
+  }
+
+  /* إضافة زر للتحكم في السايد بار */
+  .menuToggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .menuToggle:hover {
+    background-color: #182848;
+  }
+  
+  .active .menuToggle {
+    background-color: #182848;
+  }
+}
