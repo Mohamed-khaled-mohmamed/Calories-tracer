@@ -1,6 +1,7 @@
 /* طبقة التراكب (Overlay) */
 .overLay {
-  position: fixed;
+  position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,8 +17,8 @@
 .container {
   position: relative;
   width: 100%;
-  /* top: 0%;
-  left: 10%; */
+  /* left: 10%; */
+
   margin: auto;
   max-width: 400px; /* تعديل العرض الأقصى */
   padding: 2rem;
@@ -116,7 +117,7 @@
 @media (max-width: 480px) {
   .container {
     padding: 1rem;
-    margin: 1rem; /* التأكد من أن الحاوية لا تلتصق بحواف الشاشة */
+    margin: 1rem; 
   }
 }
 
